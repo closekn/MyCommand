@@ -8,7 +8,14 @@
 
 ## 使用法
 
-MyCommandnにPATHを通す
+- MyCommandnにPATHを通す
+```.zshrc
+export PATH="$PATH:hoge/piyo/MyCommand"
+```
+- 各コマンドに実行権限がない場合は実行権限を付与する
+```
+> chmod a+x hoge
+```
 
 ## コマンド
 
