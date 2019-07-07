@@ -8,7 +8,7 @@
 
 ## 使用法
 
-- MyCommandnにPATHを通す
+- MyCommandディレクトリにPATHを通す
 ```.zshrc
 export PATH="$PATH:hoge/piyo/MyCommand"
 ```
