@@ -5,7 +5,7 @@ IPCS_S=(`ipcs -s | cut -f2 -d" " | grep -o '[0-9]*'`)
 IPCS_M=(`ipcs -m | cut -f2 -d" " | grep -o '[0-9]*'`)
 IPCS_Q=(`ipcs -q | cut -f2 -d" " | grep -o '[0-9]*'`)
 
-# メモリ、セマフォ、クエリを消去
+# メモリ、セマフォ、キューを消去
 for id in $IPCS_M;
 do
   ipcrm -m $id;
