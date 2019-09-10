@@ -41,8 +41,8 @@ int main() {
 
 ### mygo
 
-競プロ用goファイル作成コマンド
-操作はmycppと同様
+競プロ用goファイル作成コマンド  
+操作はmycppと同様  
 内容が以下のgoファイルを作成する。
 ```go
 package main
