@@ -15,34 +15,34 @@ do
     touch $arg.go # make gofile
     echo "package main
     
-    import (
-        "bufio"
-        "fmt"
-        "os"
-        "strconv"
-    )
+import (
+  "bufio"
+  "fmt"
+  "os"
+  "strconv"
+)
 
-    var sc = bufio.NewScanner(os.Stdin)
-    var wtr = bufio.NewWriter(os.Stdout)
+var sc = bufio.NewScanner(os.Stdin)
+var wtr = bufio.NewWriter(os.Stdout)
 
-    func nextInt() int {
-	    sc.Scan()
-	    i, e := strconv.Atoi(sc.Text())
-	    if e != nil {
-			panic(e)
-	    }
-	    return i
-    }
+func nextInt() int {
+  sc.Scan()
+  i, e := strconv.Atoi(sc.Text())
+  if e != nil {
+    panic(e)
+  }
+  return i
+}
 
-    func nextLine() string {
-	    sc.Scan()
-	    return sc.Text()
-    }
+func nextLine() string {
+  sc.Scan()
+  return sc.Text()
+}
 
-    func main() {
-        //sc.Split(bufio.ScanWords)
-        
-    }
-    "  > $arg.go
+func main() {
+  //sc.Split(bufio.ScanWords)
+
+}
+" > $arg.go
     fi
 done
