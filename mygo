@@ -9,17 +9,41 @@ fi
 # repeat for argument 
 for arg in $@
 do
-    if test -e "$arg.cpp"; then # Do not create $arg.cpp if it exists
-    echo "$arg.cpp already exists."
+    if test -e "$arg.go"; then # Do not create $arg.go if it exists
+    echo "$arg.go already exists."
     else
-    touch $arg.cpp # make cppfile
-    echo "#include <bits/stdc++.h>" >> $arg.cpp # set snippet
-    echo "using namespace std;" >> $arg.cpp
-    echo "" >> $arg.cpp
-    echo "int main() {" >> $arg.cpp
-    echo "" >> $arg.cpp
-    echo "" >> $arg.cpp
-    echo "  return 0;" >> $arg.cpp
-    echo "}" >> $arg.cpp
+    touch $arg.go # make gofile
+    cat <<EOF > $arg.go
+    package main
+
+    import (
+        "bufio"
+        "fmt"
+        "os"
+        "strconv"
+    )
+
+    var sc = bufio.NewScanner(os.Stdin)
+    var wtr = bufio.NewWriter(os.Stdout)
+
+    func nextInt() int {
+	    sc.Scan()
+	    i, e := strconv.Atoi(sc.Text())
+	    if e != nil {
+			panic(e)
+	    }
+	    return i
+    }
+
+    func nextLine() string {
+	    sc.Scan()
+	    return sc.Text()
+    }
+
+    func main() {
+        //sc.Split(bufio.ScanWords)
+        
+    }
+    EOF
     fi
 done
