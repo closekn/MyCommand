@@ -26,7 +26,7 @@ export PATH="$PATH:hoge/piyo/MyCommand"
 > mycpp hoge
 ```
 により、内容が以下の hoge.cpp を作成する。
-```cpp:hoge.cpp
+```cpp
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -38,6 +38,44 @@ int main() {
 ```
 引数の数だけ各引数名のcppファイルを作成する。
 カレントディレクトリに既に同名cppファイルがある場合は作成しない。
+
+### mygo
+
+競プロ用goファイル作成コマンド
+操作はmycppと同様
+内容が以下のgoファイルを作成する。
+```go
+package main
+
+import (
+  "bufio"
+  "fmt"
+  "os"
+  "strconv"
+)
+
+var sc = bufio.NewScanner(os.Stdin)
+var wtr = bufio.NewWriter(os.Stdout)
+
+func nextInt() int {
+  sc.Scan()
+  i, e := strconv.Atoi(sc.Text())
+  if e != nil {
+    panic(e)
+  }
+  return i
+}
+
+func nextLine() string {
+  sc.Scan()
+  return sc.Text()
+}
+
+func main() {
+  //sc.Split(bufio.ScanWords)
+    
+}
+```
 
 ### ipcs-kill
 
