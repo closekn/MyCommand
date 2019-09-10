@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# argument is nothing
+if [ $# = 0 ]; then
+    echo "Specify file names as arguments."
+    exit 1
+fi
+
+# repeat for argument 
+for arg in $@
+do
+    if test -e "$arg.cpp"; then # Do not create $arg.cpp if it exists
+    echo "$arg.cpp already exists."
+    else
+    touch $arg.cpp # make cppfile
+    echo "#include <bits/stdc++.h>" >> $arg.cpp # set snippet
+    echo "using namespace std;" >> $arg.cpp
+    echo "" >> $arg.cpp
+    echo "int main() {" >> $arg.cpp
+    echo "" >> $arg.cpp
+    echo "" >> $arg.cpp
+    echo "  return 0;" >> $arg.cpp
+    echo "}" >> $arg.cpp
+    fi
+done
