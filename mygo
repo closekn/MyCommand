@@ -13,9 +13,8 @@ do
     echo "$arg.go already exists."
     else
     touch $arg.go # make gofile
-    cat <<EOF > $arg.go
-    package main
-
+    echo "package main
+    
     import (
         "bufio"
         "fmt"
@@ -44,6 +43,6 @@ do
         //sc.Split(bufio.ScanWords)
         
     }
-    EOF
+    "  > $arg.go
     fi
 done
