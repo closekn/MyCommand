@@ -1,0 +1,42 @@
+#!/bin/sh
+
+# argument is nothing
+if [ $# = 0 ]; then
+    echo "Specify file names as arguments."
+    exit 1
+fi
+
+# repeat for argument 
+for title in $@
+do
+    if test -e "$title.md"; then # Do not create $title.md if it exists
+    echo "$title.md already exists."
+    else
+    touch $title.md # make Markdown for thesis
+    echo "# $title
+
+## Info
+
+- Author
+- Source
+- Year of pPublication
+
+[link]()
+
+## Summary
+
+### What research
+
+### Better than previous research
+
+### Core Technologies & Methods
+
+### Verification/Experiment methods
+
+### My thoughts
+
+### Relations
+
+## Special note" > $title.md
+    fi
+done
