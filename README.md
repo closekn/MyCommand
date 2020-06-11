@@ -102,7 +102,7 @@ func main() {
 
 - Author
 - Source
-- Year of pPublication
+- Year of Publication
 
 [link]()
 
